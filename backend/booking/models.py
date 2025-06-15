@@ -3,6 +3,7 @@ from django.db import models
 from userManagement.models import TypeUser
 from trips.models import Trip
 from django.core.exceptions import ValidationError
+from phonenumber_field.modelfields import PhoneNumberField
 
 # Create your models here.
 
@@ -16,6 +17,8 @@ class BookingUser(models.Model):
     is_cancelled = models.BooleanField(default=False)
     cancellation_date = models.DateTimeField(null=True, blank=True)
     total_price = models.DecimalField(max_digits=10, decimal_places=2, default=0)
+    user_name = models.CharField(max_length=200)
+    user_phone_number = PhoneNumberField()
 
     class Meta:
 

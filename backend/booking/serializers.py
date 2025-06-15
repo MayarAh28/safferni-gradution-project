@@ -18,7 +18,7 @@ class BookingSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'user', 'trip', 'trip_details', 'booking_date',
             'number_of_seats', 'is_cancelled', 'cancellation_date',
-            'total_price', 'assigned_seats'
+            'total_price', 'assigned_seats', 'user_name', 'user_phone_number',
         ]
         read_only_fields = ['booking_date', 'is_cancelled', 'cancellation_date']
         extra_kwargs = {
