@@ -27,7 +27,7 @@ def api_overview(request):
 class TripListView(generics.ListCreateAPIView):
     queryset = Trip.objects.all()
     serializer_class = TripSerializer
-    permission_classes = [IsManager, IsAdminUser, IsAuthenticated]
+    permission_classes = [ IsAuthenticated]
 
 
 
